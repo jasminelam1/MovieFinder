@@ -8,4 +8,12 @@ const submitMovie = () =>{
     console.log(description);
     console.log(genre);
     console.log(rating);
+
+    firebase.database().ref("/movies").push({
+        name: name,
+        description: description,
+        genre: genre,
+        rating: rating
+    });
+    console.log("Pushed!")
 }
